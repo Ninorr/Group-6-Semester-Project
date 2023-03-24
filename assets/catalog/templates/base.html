@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+ <head>
+   <title>Squeaky Clean</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+
+     <link href="//db.onlinewebfonts.com/c/8c583b80ac9e392caea26d76a803b665?family=ITC+Bradley+Hand" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+
+
+    <div id="container">
+
+      <nav>
+        <div id="logo">
+       <br>
+        </div>
+
+        <ul>
+             <li><a href="{% url 'index' %}">Home &nbsp;</a></li>
+          <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="#">About &nbsp;<i class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+            <ul>
+
+              <li><a href="{% url 'whoweare' %}">Who we are</a></li>
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+
+            </ul>
+            </div>
+          </li>
+             <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="#">Get started &nbsp;<i class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+            <ul>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+            </div>
+             </li>
+            <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="#">My account&nbsp;<i class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+            <ul>
+                <li><a href="#">Log In</a></li>
+            </ul>
+            </div>
+        </ul>
+      </nav>
+
+<div class = "sq">
+    <p>SQUEAKY CLEAN-DRY-CLEANING STORE</p>
+            </div>
+    </div>
+
+{% block content %}
+  {% endblock %}
+
+  </body>
+</html>

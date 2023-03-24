@@ -1,0 +1,169 @@
+@import url(//db.onlinewebfonts.com/c/8c583b80ac9e392caea26d76a803b665?family=ITC+Bradley+Hand);
+* {
+  margin:0;
+  padding:0;
+  font-family: "ITC Bradley Hand";
+  color: black;
+}
+body {
+  background-color: #FFE699;
+
+
+
+  color: black;
+  background-repeat: no-repeat;
+
+}
+
+
+
+#container {
+  position:relative;
+  width:100%;
+  padding-top: 8px;
+
+  color: black;
+}
+
+.sq{
+  font-size: 50px;
+  background-color: #FFE699;
+  color: black;
+  padding: 18px;
+  text-align: center;
+}
+
+#container > nav {
+  width:100%;
+  display:flex;
+  color: black;
+  max-height:200px;
+
+
+}
+#logo {
+  line-height:40px;
+  font-size:30px;
+  padding-left: 20px;
+  padding-right: 550px;
+  color: white;
+  width:60%;
+  text-align: left;
+
+}
+#container > nav > ul {
+  margin:0;
+
+  paddding:0;
+  list-style-type:none;
+  display:flex;
+  position:absolute;
+    right:50px;
+/*   min-width:60%; */
+}
+#container > nav > ul > li {
+  line-height:60px;
+  margin: 0 5px;
+  padding:2px;
+  border-radius: 10px;
+  text-align:center;
+  display:inline-block;
+  background-color: lightblue;
+  border-style:solid;
+    border-width:1px;
+    border-color: #cacaca;
+
+  min-width:120px;
+
+}
+#container > nav > ul > li > a {
+  position:relative;
+  background-color: lightblue;
+/*   background-color:red; */
+  margin: 0 20px;
+    color:black;
+}
+#container > nav > ul > li:hover {
+  border-bottom: 2px solid white;
+
+
+}
+#container > nav > ul > .dropdown:hover {
+  border-bottom:none;
+  background-color: lightblue;
+
+}
+#container > nav > ul > .dropdown:hover >  .dd
+{
+  display:block;
+   background-color: white;
+  text-align: center;
+
+}
+.dropdown:hover > a .fa-caret-down {
+  display:none;
+  text-align: center;
+}
+i{
+  background-color: lightblue;
+}
+a {
+
+  text-decoration:none;
+
+}
+
+#container > nav > ul > li > div {
+  position:absolute;
+  padding: 0 10px;
+
+
+  display:none;
+
+  min-width:100px;
+}
+
+#container > nav > ul > li > div > ul {
+  margin:0px 0 10px ;
+  padding:0;
+  list-style:none;
+  text-align: center;
+}
+#u_a_c {
+  position:relative;
+  width:100%;
+  background-color:lightblue;
+/*   background-color:red; */
+}
+#up_arrow {
+
+  position:relative;
+  width:20px;
+  height:20px;
+  left:42%;
+  top:-10px;
+
+  transform:rotate(45deg);
+}
+#container > nav > ul > li> div > ul > li:hover {
+  background-color:rgba(0,0,0,0.0);
+}
+#container > nav > ul > li > div > ul > li > a {
+  padding : 5px;
+    color:black;
+  background-color: white;
+  text-align: center;
+}
+.contactus{
+  text-align: center;
+
+}
+.contactpage{
+  padding-left: 80px;
+  padding-top: 20px;
+}
+.whoweare{
+   padding-left: 80px;
+  padding-top: 20px;
+  padding-right: 80px;
+}
