@@ -44,7 +44,11 @@
             <div class="dd">
               <div id="up_arrow"></div>
             <ul>
-                <li><a href="#">Log In</a></li>
+                {% if user.is_authenticated %}
+                   <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                   <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
             </ul>
             </div>
         </ul>
