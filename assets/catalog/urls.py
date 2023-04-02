@@ -13,4 +13,6 @@ urlpatterns = [
     path('aboutus/contactus',views.contactus, name='contactus'),
     path('aboutus/whoweare',views.whoweare, name='whoweare'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path("signup", views.signup, name="signup"),
+    path("login/", views.user_login, name="user_login"),
 ]

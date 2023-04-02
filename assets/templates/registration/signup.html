@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% if messages %}
+  {% for message in messages %}
+      <strong>{{message}}</strong>
+ {% endfor %}
+{% endif %}
+<html>
+  <h2>Sign up</h2>
+  <form method="POST" action="/signup">
+    {%csrf_token%}
+    <table>
+        <tr>USERNAME</tr><tr><input type="textfield" name="username"/></tr>
+        <tr>FIRSTNAME</tr><tr><input type="textfield" name="fname"/></tr>
+        <tr>LASTTNAME</tr><tr><input type="textfield" name="lname"/></tr>
+        <tr>PASSWORD</tr><tr><input type="password" name="passkey"/>
+        <tr>EMAIL</tr><tr><input type="email" name="uemail"/></tr>
+    </table>
+    <button type="submit">Submit</button>
+  </form>
+</html>
+{% endblock %}
