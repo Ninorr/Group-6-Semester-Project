@@ -1,39 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-{% if messages %}
-  {% for message in messages %}
-      <strong>{{message}}</strong>
- {% endfor %}
-{% endif %}
 
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  {% if next %}
     {% if user.is_authenticated %}
-      <p>Welcome to the Squeaky clean</p>
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
     {% else %}
       <p>Please login to see this page.</p>
     {% endif %}
+  {% endif %}
 
   <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
 
       <table class="center">
-{% comment %}      <tr>
+      <tr>
         <td>{{ form.username.label_tag }}</td>
         <td>{{ form.username }}</td>
       </tr>
       <tr>
         <td>{{ form.password.label_tag }}</td>
         <td>{{ form.password }}</td>
-      </tr>{% endcomment %}
-
-          <tr>USERNAME</tr>
-      <tr><input type="textfield" name="username"/></tr>
-
-      <tr>PASSWORD</tr>
-      <tr><input type="email" name="email"/>
+      </tr>
     </table>
     <div class="text-center">
         <div><input  type="submit" value="login" ></div>
     </div>
+    <input type="hidden" name="next" value="{{ next }}">
 
 
   </form>
