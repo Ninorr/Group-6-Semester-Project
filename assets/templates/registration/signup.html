@@ -1,14 +1,15 @@
 {%  extends 'base.html' %}
 {% load static %}
 {% block content %}
-    {% if messages %}
+{% if messages %}
   {% for message in messages %}
       <strong>{{message}}</strong>
- {% endfor %}
+  {% endfor %}
 {% endif %}
+
 <html>
   <h2>Sign up</h2>
-  <form method="POST" action="/signup">
+  <form method="POST" action="{% url 'signup' %}">
     {%csrf_token%}
     <table>
         <tr>USERNAME</tr><tr><input type="textfield" name="username"/></tr>

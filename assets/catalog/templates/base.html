@@ -36,7 +36,7 @@
             <div class="dd">
               <div id="up_arrow"></div>
             <ul>
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                 {% if not user.is_authenticated %} <li><a href="{% url 'signup' %}">Sign Up</a></li> {% endif %}
             </ul>
             </div>
              </li>
