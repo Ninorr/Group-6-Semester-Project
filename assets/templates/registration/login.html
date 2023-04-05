@@ -13,6 +13,13 @@
       <p>Please login to see this page.</p>
     {% endif %}
   {% endif %}
+    <div class="text-center">
+{% if messages %}
+  {% for message in messages %}
+      <strong>{{message}}</strong>
+  {% endfor %}
+    </div>
+{% endif %}
 
   <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
@@ -37,7 +44,7 @@
     <p>
     <div class="text-center">
         <a class ="center" href="{% url 'password_reset' %}">Forgot password?</a>
-    </div>>
+    </div>
     </p>
 
 

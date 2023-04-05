@@ -8,17 +8,35 @@
 {% endif %}
 
 <html>
+<div class="text-center">
   <h2>Sign up</h2>
+</div>
   <form method="POST" action="{% url 'signup' %}">
     {%csrf_token%}
-    <table>
-        <tr>USERNAME</tr><tr><input type="textfield" name="username"/></tr>
-        <tr>FIRSTNAME</tr><tr><input type="textfield" name="fname"/></tr>
-        <tr>LASTTNAME</tr><tr><input type="textfield" name="lname"/></tr>
-        <tr>PASSWORD</tr><tr><input type="password" name="passkey"/>
-        <tr>EMAIL</tr><tr><input type="email" name="uemail"/></tr>
+    <table class="center">
+        <tr>
+            <td>USERNAME</td>
+            <td><input type="textfield" name="username"/></td>
+        </tr>
+        <tr>
+            <td>FIRSTNAME</td>
+            <td><input type="textfield" name="fname"/></td>
+        </tr>
+        <tr>
+            <td>LASTTNAME</td>
+            <td><input type="textfield" name="lname"/></td>
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td><input type="password" name="passkey"/></td>
+        </tr>
+             <td>EMAIL</td>
+             <td><input type="email" name="uemail"/></td>
+        </tr>
     </table>
+      <div class="text-center">
     <button type="submit">Submit</button>
+      </div>
   </form>
 </html>
 {% endblock %}
