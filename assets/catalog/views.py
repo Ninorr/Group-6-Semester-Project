@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login as auth_login,logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -16,6 +16,7 @@ def services(request):
 
 def contactus(request):
     return render(request, 'contact.html', )
+
 
 def whoweare(request):
     return render(request, 'whoweare.html', )
@@ -36,3 +37,7 @@ def signup(request):
         return render(request,'registration/login.html')
 
     return render(request,'registration/signup.html')
+
+
+def home(request):
+    return render(request,'registration/home.html')
