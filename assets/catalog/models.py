@@ -64,3 +64,17 @@ class Customer(models.Model):
 
     def __str__(self):
         return f"{self.customer_first_name} {self.customer_last_name} - {self.customer_email}"
+
+
+class Address(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=255)
+    mobile = models.CharField(max_length=20)
+    pincode = models.CharField(max_length=20)
+    house_no = models.CharField(max_length=20)
+    street = models.CharField(max_length=255)
+    landmark = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f'{self.full_name}, {self.house_no}, {self.street}, {self.landmark}, {self.city}, {self.pincode}'

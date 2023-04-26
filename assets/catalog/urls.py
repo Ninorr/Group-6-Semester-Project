@@ -2,6 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from . import views
+from .views import (
+    address_create,
+    address_update,
+    address_delete,
+    address_list,
+)
 
 urlpatterns = [
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
@@ -15,4 +21,15 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name="signup"),
     path('home', views.home, name="home"),
+    path('list/', address_list, name='address_list'),
+    path('new/', address_create, name='address_create'),
+    path('<int:pk>/edit/', address_update, name='address_update'),
+    path('<int:pk>/delete/', address_delete, name='address_delete'),
+    path('change-name/', views.change_name, name='change_name'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path("accounts/signup/", views.signup, name="signup"),
+    path('accounts/myaccount/', views.myaccount, name='myaccount'),
+    path('accounts/delete/', views.delete_account, name='delete_account'),
+    path('accounts/terms/', views.terms, name='terms'),
+
 ]

@@ -1,176 +1,149 @@
-@import url(//db.onlinewebfonts.com/c/8c583b80ac9e392caea26d76a803b665?family=ITC+Bradley+Hand);
-* {
-  margin:0;
-  padding:0;
-  font-family: "ITC Bradley Hand";
-  color: black;
-}
-body {
-  background-color: #FFE699;
 
-
-
-  color: black;
-  background-repeat: no-repeat;
-
-}
-
-
-
-#container {
-  position:relative;
-  width:100%;
-  padding-top: 8px;
-
-  color: black;
-}
-
-.sq{
+.sq {
   font-size: 50px;
   background-color: #FFE699;
   color: black;
   padding: 18px;
   text-align: center;
-}
-
-#container > nav {
-  width:100%;
-  display:flex;
-  color: black;
-  max-height:200px;
 
 
 }
-#logo {
-  line-height:40px;
-  font-size:30px;
-  padding-left: 20px;
-  padding-right: 550px;
-  color: white;
-  width:60%;
-  text-align: left;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 
+    text-decoration: none;
+    background: #FFE699;
 }
-#container > nav > ul {
-  margin:0;
-
-  paddding:0;
-  list-style-type:none;
-  display:flex;
-  position:absolute;
-    right:50px;
-/*   min-width:60%; */
-}
-#container > nav > ul > li {
-  line-height:60px;
-  margin: 0 5px;
-  padding:2px;
-  border-radius: 10px;
-  text-align:center;
-  display:inline-block;
-  background-color: lightblue;
-  border-style:solid;
-    border-width:1px;
-    border-color: #cacaca;
-
-  min-width:120px;
-
-}
-#container > nav > ul > li > a {
-  position:relative;
-  background-color: lightblue;
-/*   background-color:red; */
-  margin: 0 20px;
-    color:black;
-}
-#container > nav > ul > li:hover {
-  border-bottom: 2px solid white;
-
-
-}
-#container > nav > ul > .dropdown:hover {
-  border-bottom:none;
-  background-color: lightblue;
-
-}
-#container > nav > ul > .dropdown:hover >  .dd
-{
-  display:block;
-   background-color: white;
-  text-align: center;
-
-}
-.dropdown:hover > a .fa-caret-down {
-  display:none;
-  text-align: center;
+body{
+    min-height: 100vh;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
 }
 i{
-  background-color: lightblue;
-}
-a {
-
-  text-decoration:none;
-
+    background: transparent;
 }
 
-#container > nav > ul > li > div {
-  position:absolute;
-  padding: 0 10px;
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #FFE699;
 
-
-  display:none;
-
-  min-width:100px;
+    padding: 2px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
 }
-
-#container > nav > ul > li > div > ul {
-  margin:0px 0 10px ;
-  padding:0;
-  list-style:none;
-  text-align: center;
+header .logo{
+    font-weight: bolder;
+    font-size: 25px;
+    color: #333;
 }
-#u_a_c {
-  position:relative;
-  width:100%;
-  background-color:lightblue;
-/*   background-color:red; */
-}
-#up_arrow {
-
-  position:relative;
-  width:20px;
-  height:20px;
-  left:42%;
-  top:-10px;
-
-  transform:rotate(45deg);
-}
-#container > nav > ul > li> div > ul > li:hover {
-  background-color:rgba(0,0,0,0.0);
-}
-#container > nav > ul > li > div > ul > li > a {
-  padding : 5px;
-    color:black;
-  background-color: white;
-  text-align: center;
-}
-.contactus{
-  text-align: center;
+header .navbar ul {
+    list-style: none;
 
 }
-.contactpage{
-  padding-left: 80px;
-  padding-top: 20px;
+header .navbar ul li{
+    position: relative;
+    float: left;
 }
-.whoweare{
-   padding-left: 80px;
-  padding-top: 20px;
-  padding-right: 80px;
+
+header .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color:#333;
+    display: block;
 }
-.center {
-  margin-left: auto;
-  margin-right: auto;
+header .navbar ul li a:hover{
+    background: #333;
+    color: #fff;
 }
-.text-center {
-  text-align: center;
+
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #fff;
+    display: none;
+}
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+header .navbar ul li ul li ul{
+    left: 200px;
+    top:0;
+}
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar{
+    display: none;
+}
+header label{
+    font-size: 20px;
+    color:#333;
+    cursor:pointer;
+    display: none;
+}
+
+@media(max-width:991px){
+    .sq{
+    font-size: 30px;
+        margin-top: 2px;
+}
+
+
+
+
+    header{
+        padding:20px;
+    }
+    header label{
+        display: initial;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right:0;
+        background: #fff;
+        border-top: 1px solid rgba(0,0,0,.1);
+        display: none;
+    }
+
+header .navbar ul li{
+    width: 100%;
+}
+
+header .navbar ul li ul{
+    position: relative;
+    width: 100%;
+
+}
+header .navbar ul li ul li{
+    background: #eee;
+
+}
+header .navbar ul li ul li ul{
+    width: 100%;
+    left: 0;
+}
+#menu-bar:checked ~ .navbar{
+    display: initial;
+}
+
+.sq{
+
+  top: 0;
+
+}
+
+
+
 }

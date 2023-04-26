@@ -10,12 +10,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+*{
+    text-decoration: none;
+}
 
-<body>
+.sq p{
+    padding-top: 18px;
+}
+</style>
+<body style="background-color: #eeeeee">
 {% if request.user.is_authenticated %}
     <div class="jumbotron text-center" style="margin-bottom:0">
-      <h1>Welcome to your account!</h1>
-      <p>Here,you can navigate to different services that we offer!</p>
+      <h1 style="background-color:#eeeeee ">Welcome to your account!</h1>
+      <p style="background-color:#eeeeee ">Here,you can navigate to different services that we offer!</p>
     </div>
 
 
@@ -29,7 +37,7 @@
           <h3>Navigate right now</h3>
           <ul class="nav nav-pills nav-stacked">
             <li class="active"><a href="#">Start my order</a></li>
-            <li><a href="#">View my order histroy</a></li>
+            <li><a href="#">View my order history</a></li>
             <li><a href="#">Manage my account</a></li>
           </ul>
           <hr class="hidden-sm hidden-md hidden-lg">
@@ -48,8 +56,8 @@
     </div>
 
     <div class="jumbotron text-center" style="margin-bottom:0">
-      <p>Squeaky Clean - we got your clothes and your back!</p>
-      <h5> Technical difficulties? Call us right away at 402-000-000-00</h5>
+      <p style="background-color:#eeeeee ">Squeaky Clean - we got your clothes and your back!</p>
+      <h5 style="background-color:#eeeeee "> Technical difficulties? Call us right away at 402-000-000-00</h5>
     </div>
 
 </body>
