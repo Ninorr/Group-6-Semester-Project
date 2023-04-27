@@ -2,12 +2,13 @@
 
 {% block content %}
     <style>
-    *{
 
+    .adrrs *{
         text-align: center;
-
     }
-
+    body{
+        background-color: #FFE699;
+    }
     .edit-btn{
     background-color: #4d90fe;
     border: none;
@@ -44,6 +45,7 @@
     }
 
     </style>
+    <div class="adrrs">
   <h2>My Addresses</h2>
     <br>
   <div style="text-align: center" class="address-cards">
@@ -51,7 +53,7 @@
       <div class="address-card">
         <h3>{{ address.full_name }}</h3>
         <p>{{ address.house_no }}, {{ address.street }}, {{ address.landmark }}, {{ address.city }}, {{ address.pincode }}</p>
-        <p>{{ address.mobile }}</p>
+        <p>{{ address.mobile_number }}</p>
         <div class="address-card-buttons" style="padding-top: 20px;padding-bottom: 20px;">
           <a href="{% url 'address_update' address.pk %}" class="btn edit-btn" >Edit</a>
           <a href="{% url 'address_delete' address.pk %}" class="btn delete-btn" >Delete</a>
@@ -63,8 +65,10 @@
       <p>You have no saved addresses.</p>
     {% endfor %}
   </div>
-    <br>
+    <br><div>
   <a href="{% url 'address_create' %}" class="btn add-btn">Add Address</a>
+    </div>
+    </div>
 {% endblock %}
 
 {% block css %}

@@ -2,8 +2,12 @@
 
 {% block content %}
     <style>
-    *{
+    .delcnfm *{
         text-align: center;
+        background-color: #FFE699;
+    }
+    body{
+        background-color: #FFE699;
     }
 
 
@@ -19,6 +23,7 @@ input[type="submit"] {
     margin-top: 8px;
 }
     </style>
+    <div class="delcnfm">
 <h1>Confirm Delete</h1>
 <p>Are you sure you want to delete the following address?</p>
 <dl>
@@ -51,5 +56,5 @@ input[type="submit"] {
     margin-top: 8px;" href="{% url 'address_list' %}">Cancel</a>
 </form>
 
-
+</div>
 {%  endblock %}

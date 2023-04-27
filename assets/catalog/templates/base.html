@@ -3,18 +3,20 @@
  <head>
    <title>Squeaky Clean</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
      <link rel="stylesheet" href="{% static 'style.css' %}">
      <link href="//db.onlinewebfonts.com/c/8c583b80ac9e392caea26d76a803b665?family=ITC+Bradley+Hand" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  </head>
 <body>
 <div class="container01">
-    <header>
+
+    <header style="right: 0;">
         <a href="#" class="logo"></a>
 
         <input type="checkbox" id="menu-bar">
-            <label for="menu-bar"><i class="fa fa-bars"></i></label>
+            <label for="menu-bar"><i style="font-size: 35px;padding-top: 15px;" class="fa fa-bars"></i></label>
         <nav class="navbar">
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
@@ -25,13 +27,13 @@
                     <li><a href ="{% url 'contactus' %}">Contact us</a></li>
                 </ul>
             </li>
-                <li><a href="#">Get started <i class="fa  fa-caret-down"></i></a>
+                <li><a href="#">Get started <i class="fa fa-caret-down"></i></a>
                     <ul>
                         <li><a href="{% url 'signup' %}">Sign up</a></li>
 
                     </ul>
                 </li>
-                <li><a href="#">My account <i class="fa  fa-caret-down"></i></a>
+                <li><a href="#">My account <i class="fa fa-caret-down"></i></a>
                     <ul>
                         {% if user.is_authenticated %}
                             <li><a href="#">Settings <i class="fa  fa-caret-down"></i></a>
@@ -59,16 +61,13 @@
             <a  href="/orders">Orders</a>
             {% endif %}
 
-             <li><p style="color: transparent"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-
-                </li>
             </ul>
         </nav>
     </header>
 </div>
 
 
-<div class = "sq" style="padding-top: 66px;padding-bottom: 20px;">
+<div class = "sq" style="padding-top: 70px;padding-bottom: 20px;">
     <p>SQUEAKY CLEAN-DRY-CLEANING STORE</p>
             </div>
 {% block content %}

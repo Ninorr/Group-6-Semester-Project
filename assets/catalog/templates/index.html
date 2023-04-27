@@ -1,9 +1,18 @@
 {%  extends 'base.html' %}
 {% load static %}
 {% block content %}
+<style>
 
+
+
+    body{
+          background-color: #FFE699;
+    }
+
+
+</style>
 {% if request.user.is_authenticated %}
-    <div style="width:50%;height:50px" ;align="center">
+    <div style="width:50%;height:50px;">
         <strong><a href="{% url 'home' %}">-----> Go to MySqueakyDash</a></strong>
     </div>
 {% endif %}

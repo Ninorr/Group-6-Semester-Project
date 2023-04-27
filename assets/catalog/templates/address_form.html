@@ -3,18 +3,20 @@
 {% block content %}
     <style>
     .supe *{
-        background-color: white;
-    }
-    body{
+
         text-align: center;
     }
+    body
+    {
+        background-color: #FFE699;
+    }
     .supe {
-   margin-top: -90px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #FFE699;
+        padding-top: 10px;
   }
     form{
      background: #fff;
@@ -46,13 +48,17 @@ input[type="submit"] {
     margin-top: 8px;
 }
     </style>
+    <div class="adr">
+    <div style="text-align: center;background-color: #FFE699">
      <h1>Address Form</h1>
+    </div>
    <div class="supe">
 
-<form method="post">
+<form method="post" style="background-color: white">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" value="Save">
 </form>
 </div>
+    </div>
 {% endblock %}

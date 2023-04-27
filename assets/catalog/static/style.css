@@ -6,28 +6,28 @@
   padding: 18px;
   text-align: center;
 
-
 }
-*{
+.container01 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 
-    text-decoration: none;
+
     background: #FFE699;
 }
-body{
-    min-height: 100vh;
+.container01{
+
     background-color: transparent;
     background-size: cover;
     background-position: center;
 }
-i{
+.container01 i{
     background: transparent;
+
 }
 
-header{
+.container01 header{
     position: fixed;
     top: 0; left: 0; right: 0;
     background: #FFE699;
@@ -45,11 +45,13 @@ header .logo{
 }
 header .navbar ul {
     list-style: none;
+     text-decoration: none;
 
 }
 header .navbar ul li{
     position: relative;
     float: left;
+     text-decoration: none;
 }
 
 header .navbar ul li a{
@@ -57,6 +59,7 @@ header .navbar ul li a{
     padding: 20px;
     color:#333;
     display: block;
+        text-decoration: none;
 }
 header .navbar ul li a:hover{
     background: #333;
@@ -96,7 +99,7 @@ header label{
 
 @media(max-width:991px){
     .sq{
-    font-size: 50px;
+    font-size: 36px;
         margin-top: 2px;
 }
 
@@ -112,7 +115,7 @@ header label{
     header .navbar{
         position: absolute;
         top: 100%; left: 0; right:0;
-        background: #fff;
+
         border-top: 1px solid rgba(0,0,0,.1);
         display: none;
     }
@@ -145,10 +148,6 @@ header .navbar ul li ul li ul{
 
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
 .text-center {
   text-align: center;
 }
