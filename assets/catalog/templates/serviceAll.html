@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<!-- all products -->
+
+<div class="container-fluid mt-3" xmlns="http://www.w3.org/1999/html">
+	<div class="row">
+    <div id='services' class="col-lg-9 mx-auto">
+			<div class="row mx-auto">
+{% for service in services %}
+
+   <div class="card mx-auto mb-3" id={{service.id}} style="width: 18rem;">
+  <img class="card-img-top" src="{{service.image.url}}" >
+    <div class="card-body">
+      <p class="card-title">{{service.name}}</p>
+        <p class="card-title">{{service.price|currency}}</p>
+    </div>
+						<!-- {{service | is_in_cart:request.session.cart }}  -->
+    <div class="card-footer p-0 no-gutters">
+    {% if service|is_in_cart:request.session.cart %}
+        <div class="row no-gutters">
+        <form action="services#{{service.id}}" class="col-2 " method="post" >
+								{% csrf_token %}
+								<input hidden type="text" name='service' value='{{service.id}}'>
+								<input hidden type="text" name='remove' value='True'>
+								<input type="submit" value=" - " class="btn btn-block btn-success border-right">
+							</form>
+							<div class="text-center col btn btn-success">{{service|cart_quantity:request.session.cart}} in Cart</div>
+							<form action="services#{{service.id}}" class="col-2 " method="post">
+								{% csrf_token %}
+								<input hidden type="text" name='service' value='{{service.id}}'>
+								<input type="submit" value=" + " class="btn btn-block btn-success border-left">
+							</form>
+						</div>
+						{% else %}
+						<form action="services#{{service.id}}" method="POST" class="btn-block">
+							{% csrf_token %}
+							<input hidden type="text" name='service' value='{{service.id}}'>
+							<div class="text-center">
+                            <input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+                            </div>
+						</form>
+						{% endif %}
+
+					</div>
+
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

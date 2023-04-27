@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<head>
+  <title>User Account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+*{
+    text-decoration: none;
+}
+
+.sq p{
+    padding-top: 18px;
+}
+</style>
+<body style="background-color: #eeeeee">
+{% if request.user.is_authenticated %}
+    <div class="jumbotron text-center" style="margin-bottom:0">
+      <h1 style="background-color:#eeeeee ">Welcome to your account!</h1>
+      <p style="background-color:#eeeeee ">Here,you can navigate to different services that we offer!</p>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+            {% csrf_token %}
+          <h3>Start my order</h3>
+          <h5>Want to start your order? You are at the right place! Click the link below to start your order now!</h5>
+          <h5>Let us take care of the stains and cleaning!</h5>
+          <h3>Navigate right now</h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="services">Start my order</a></li>
+              <li><a href="/orders">View my order history</a></li>
+            <li><a href="#">Manage my account</a></li>
+          </ul>
+          <hr class="hidden-sm hidden-md hidden-lg">
+        </div>
+        <div class="col-sm-8">
+          <h3>Order history</h3>
+          <h5>Want to view your order histroy? </h5>
+          <h5>Find the link below and view previous orders along with status updates</h5>
+          <br>
+          <h3>Manage my account</h3>
+          <h5>Please update personal and delivery information regularly</h5>
+          <h5> We strive to provide our customers with high quality service - keep us updated on your information for us to achive our goal</h5>
+          <h5>Find the link to update your information or to view account settings</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+      <p style="background-color:#eeeeee ">Squeaky Clean - we got your clothes and your back!</p>
+      <h5 style="background-color:#eeeeee "> Technical difficulties? Call us right away at 402-000-000-00</h5>
+    </div>
+
+</body>
+{% else %}
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h2> Are you logged in? Try Loggin in</h2>
+    </div>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+
+        <p></p>
+        <p>Squeaky Clean - we got your clothes and your back!</p>
+        <h5> Technical difficulties? Call us right away at 402-000-000-00</h5>
+    </div>
+{% endif %}
+{% endblock %}

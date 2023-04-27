@@ -1,0 +1,91 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+      <strong>{{message}}</strong>
+  {% endfor %}
+{% endif %}
+
+<style>
+.sup {
+   margin-top: -170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+      background-color: #FFE699;
+  }
+form{
+     background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+
+    width: 350px;
+
+}
+
+  button[type="submit"] {
+    background-color: #4d90fe;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    width: 250px;
+  }
+  button[type="submit"]:hover {
+    background-color: #357ae8;
+  }
+  input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 170px;
+      background-color: white;
+  }
+
+  @media(max-width:991px) {
+      .sup {
+
+          display: flex;
+
+          align-items: center;
+          height: 100vh;
+          background-color: #FFE699;
+
+          margin-right: 12px;
+      }
+  }
+</style>
+        <br>
+    <br>
+    <br>
+    <br>
+     <br>
+    <br>
+    <div class="sup">
+
+
+  <form method="POST" action="{% url 'signup' %}">
+      <h2 style="text-align: center;background-color: white">Sign Up</h2>
+      <br>
+    {%csrf_token%}
+    <table>
+        <tr>Username:</tr><tr><input type="textfield" name="username"/></tr><br>
+        <tr>Firstname:&nbsp;</tr><tr><input type="textfield" name="fname"/></tr><br>
+        <tr>Lastname:&nbsp;</tr><tr><input type="textfield" name="lname"/></tr><br>
+        <tr>Password:&nbsp;</tr><tr><input type="password" name="passkey"/><br>
+        <tr>E-Mail:   &nbsp; &nbsp; &nbsp;  </tr><tr><input type="email" name="uemail"/></tr><br>
+    </table>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

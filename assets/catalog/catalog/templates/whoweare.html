@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+.whoweare *{
+    background: #f6f6f6;
+
+     color: black;
+}
+   .whoweare {
+
+  padding: 50px;
+  background-color: white;
+   background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.whoweare-header {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+.whoweare-header p{
+    background-color: white;
+
+    font-size: large;
+
+
+  color: black; /* Grey text */
+    padding: 10px;
+
+
+}
+.whoweare-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+    background-color: transparent;
+
+}
+
+.whoweare-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+    background: transparent;
+     color: black;
+
+}
+
+.whoweare-section {
+  flex-basis: calc(50% - 40px);
+  margin: 20px;
+  padding: 20px;
+
+
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+    background-color: #ADD8E6;
+    border-radius: 20px;
+}
+
+.whoweare-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+     color: black;
+    background-color: #ADD8E6;
+
+}
+
+.whoweare-section p {
+  font-size: 18px;
+  line-height: 1.5;
+
+     color: black;
+    background-color: #ADD8E6;
+}
+
+@media (max-width: 991px) {
+    .whoweare-section{
+        flex-basis: calc(100%) ;
+
+    }
+
+}
+
+</style>
+<div class="whoweare">
+  <div class="whoweare-header">
+    <h1>About Us</h1>
+
+      <p>We are a one-stop shop for all kinds of laundry service! We offer a variety of services to our clients at reasonable pricing. We are here to deliver convenience right to your door! No waiting in line or making drawn-out phone calls to customer support. Join us today (FOR FREE!) and stop stressing about stained clothing items!</p>
+
+  </div>
+  <div class="whoweare-content">
+
+    <div class="whoweare-section">
+      <h2>When was the company founded? </h2>
+      <p>The company was founded in August of 2015 by a group of entrepreneurs who saw an opportunity to provide affordable and eco-friendly laundry services to the local community. Today, the company is a well-established leader in the laundry service industry.</p>
+    </div>
+    <div class="whoweare-section">
+      <h2>What is our mission? </h2>
+      <p>The highest quality service possible for the lowest price is our company's mission statement. It's time for you to relax and stop worrying about getting the stains out of your clothes – leave that to us! WE GOT YOUR BACK AND YOUR CLOTHES!</p>
+    </div>
+    <div class="whoweare-section">
+      <h2>What we do to thrive? </h2>
+      <p>As a business, we collaborate with skilled workers and exclusively use top-notch products! Our products and services are environmentally sustainable! We are not only worried about your clothes but also our planet Earth!we also strive to educate our wider community about the importance of environment.</p>
+    </div>
+    <div class="whoweare-section">
+      <h2>Why choose us?</h2>
+      <p>You should choose us because we care. We care about that lucky white shirt that you wear to important meetings. We care about your wedding dress and your child’s sweater. Our services, employees, and store are here to make sure you shine bright on your important day! Join us today (FOR FREE!).</p>
+    </div>
+    <div class="whoweare-section">
+      <h2 style="text-align: center;"> <br>WE GOT YOUR BACK AND YOUR CLOTHES!</h2>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
