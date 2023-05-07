@@ -17,6 +17,16 @@ class Order(models.Model):
     def __str__(self):
         return f"{self.order_clothing_type} - {self.order_date_created}"
 
+class Serviceinfo(models.Model):
+    name = models.CharField(max_length=50)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+    description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
 
 class Invoice(models.Model):
     invoice_date = models.DateField(null=True, blank=True)

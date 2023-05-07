@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 from .views import (
     address_create,
@@ -16,7 +18,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('', views.index, name='index'),
     path('aboutus/services', views.services, name='services'),
-
     path('aboutus/contactus',views.contactus, name='contactus'),
     path('aboutus/whoweare',views.whoweare, name='whoweare'),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -34,4 +35,8 @@ urlpatterns = [
     path('accounts/terms/', views.terms, name='terms'),
     path('', include('store.urls')),
 
-]
+    ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

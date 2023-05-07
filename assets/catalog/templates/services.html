@@ -60,31 +60,12 @@ grid-template-columns: 300px 1fr;
 }
 </style>
 
-<body>
+    {% for service in serviceinfo %}
+        <div class="service">
+            <h2>{{service.name}} -Price: ${{service.price}} per unit</h2>
+            <img src={{service.image.url}}  width="500" height="420"/><br>
+            <p>{{service.description}}</p>
+        </div>
+    {% endfor %}
 
-  <div class="service">
-    <h2>Stain Removal - Price: $1.50 per unit</h2>
-    <img src="{% static 'images/stain.jpg' %}"  width="500" height="420" /><br>
-    <p>We will remove all stains from the product</p>
-  </div>
-
-  <div class="service">
-    <h2>Full Service Dry Cleaning - Price: $3.50 per unit</h2>
-    <img src="{% static 'images/dry-cleaning.png' %}"  width="500" height="420" /><br>
-    <p>With our full service dry cleaning, your clothes will never be cleaner! Includes stain removal.</p>
-  </div>
-
-  <div class="service">
-    <h2>Full Service Dry Cleaning With Delivery - Price: $6.50 per unit</h2>
-    <img src="{% static 'images/delivery.jpg' %}" width="500" height="420" /><br>
-    <p>The same as our normal full service dry cleaning, except we will deliver your clothes to you once they are done at a convenient time to you!</p>
-  </div>
-
-  <div class="service">
-    <h2>Specialized Dry Cleaning - Price: $9.50 per unit</h2>
-    <img src="{% static 'images/special-dry-cleaning.jpeg' %}" width="500" height="420" /><br>
-    <p>For materials that require extra care such as leather, suede, fur or wedding dresses, please select this service.</p>
-  </div>
-
-</body>
 {% endblock %}
