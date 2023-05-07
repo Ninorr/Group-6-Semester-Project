@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from .views.cart import Cart
 from .views.checkout import CheckOut
 from .views.orders import OrderView
+from .views.invoices import InvoiceView
 
 
 urlpatterns = [
@@ -14,6 +15,7 @@ urlpatterns = [
     path('cart', Cart.as_view(), name='cart'),
     path('check-out', CheckOut.as_view(), name='checkout'),
     path('orders', OrderView.as_view(), name='orders'),
+    path('invoices', InvoiceView.as_view(), name='invoices'),
 
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
