@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from .views import review
 from .views import (
     address_create,
     address_update,
@@ -34,7 +35,7 @@ urlpatterns = [
     path('accounts/delete/', views.delete_account, name='delete_account'),
     path('accounts/terms/', views.terms, name='terms'),
     path('', include('store.urls')),
-
+    path('review/', review, name='review'),
     ]
 
 if settings.DEBUG:

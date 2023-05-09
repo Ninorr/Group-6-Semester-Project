@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AddressForm
 from .models import Address
 from .models import Serviceinfo
+from .models import Review
+from .forms import ReviewForm
 
 
 def index(request):
@@ -16,7 +18,7 @@ def index(request):
 
 def services(request):
     serviceinfo = Serviceinfo.objects.all()
-    return render(request=request, template_name='services.html', context={'serviceinfo':serviceinfo})
+    return render(request=request, template_name='services.html', context={'serviceinfo': serviceinfo})
 
 
 def contactus(request):
@@ -111,3 +113,18 @@ def delete_account(request):
         messages.success(request, 'Your account has been deleted.')
         return redirect('signup')
     return render(request, 'delete_account.html')
+
+
+def review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.save()
+            return redirect('review')
+    else:
+        form = ReviewForm()
+    reviews = Review.objects.order_by('-created_at')
+    context = {'form': form, 'reviews': reviews}
+    return render(request, 'review.html', context)

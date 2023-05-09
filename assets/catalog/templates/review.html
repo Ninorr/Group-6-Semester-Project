@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Review</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+      {% if request.user.is_authenticated %}
+        <button type="submit">Submit</button>
+          {% else %}
+          <p>Please login to post a review.</p>
+      {% endif %}
+  </form>
+  <hr>
+  {% for review in reviews %}
+    <h3>{{ review.title }}</h3>
+    <p>{{ review.content }}</p>
+    <p>Posted by {{ review.user.username }} on {{ review.created_at }}</p>
+    <hr>
+  {% empty %}
+    <p>No reviews yet.</p>
+  {% endfor %}
+{% endblock %}
