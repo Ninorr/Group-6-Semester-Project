@@ -6,12 +6,13 @@ import uuid
 
 
 class Order(models.Model):
+    order_id = models.CharField(primary_key=True, max_length=100, editable=False)
     service = models.ForeignKey(Services,
                                 on_delete=models.CASCADE)
     customer = models.ForeignKey(User,
                                  on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    order_id = models.CharField(max_length=100, default='', blank=True)
+
     price = models.DecimalField(max_digits=8, decimal_places=2)
     address = models.CharField (max_length=50, default='', blank=True)
     phone = models.CharField (max_length=50, default='', blank=True)

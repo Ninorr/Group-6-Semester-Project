@@ -7,9 +7,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AddressForm
 from .models import Address
-from .models import Serviceinfo
 from .models import Review
 from .forms import ReviewForm
+from store.models.service import Services
 
 
 def index(request):
@@ -17,7 +17,7 @@ def index(request):
 
 
 def services(request):
-    serviceinfo = Serviceinfo.objects.all()
+    serviceinfo = Services.objects.all()
     return render(request=request, template_name='services.html', context={'serviceinfo': serviceinfo})
 
 

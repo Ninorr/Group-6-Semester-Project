@@ -2,43 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Order(models.Model):
-    order_clothing_type = models.CharField(max_length=20)
-    order_clothing_quantity = models.IntegerField()
-    order_delivery_street = models.CharField(max_length=40)
-    order_delivery_city = models.CharField(max_length=40)
-    order_delivery_state = models.CharField(max_length=40)
-    order_delivery_zipcode = models.CharField(max_length=15)
-    order_delivery_contact_number = models.CharField(max_length=10)
-    order_pick_up_required = models.BooleanField(False)
-    order_date_created = models.DateTimeField(auto_now_add=True)
-    order_estimated_completion_date = models.DateField(null=True, blank=True)
-    order_sub_total = models.DecimalField(max_digits=4, decimal_places=2)
-
-    def __str__(self):
-        return f"{self.order_clothing_type} - {self.order_date_created}"
-
-
-class Serviceinfo(models.Model):
-    name = models.CharField(max_length=50)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
-    description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
-class Invoice(models.Model):
-    invoice_date = models.DateField(null=True, blank=True)
-    invoice_subtotal = models.DecimalField(max_digits=4, decimal_places=2)
-    invoice_total = models.DecimalField(max_digits=4, decimal_places=2)
-    invoice_tax = models.DecimalField(max_digits=4, decimal_places=2)
-
-    def __str__(self):
-        return f"Invoice {self.id} - {self.invoice_date}"
-
-
 class Customer(models.Model):
     customer_username = models.CharField(max_length=20)
     customer_password = models.CharField(max_length=20)
