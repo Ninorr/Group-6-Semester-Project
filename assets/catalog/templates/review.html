@@ -122,40 +122,26 @@
     </style>
     <br>
   <h1>Review</h1>
- {% if request.user.is_authenticated %}
-     <div class="rev">
-  <form method="post">
-    {% csrf_token %}
-
-     <form method="post">
-    <input type="hidden" name="csrfmiddlewaretoken" value="QaQ88AhpaxXmil7TNcNhofv76OCnF1toSzhF6KpCzS8aqZDlHEPzZq5w8xzoF9WI">
-    <p>
-    <label for="id_title">Title:</label>
-    <input style="
-    height: 5%;width: 98%;" type="text" name="title" maxlength="100" required="" id="id_title">
-
-
-  </p>
-
-
-  <p>
-    <label for="id_content">Content:</label>
-    <textarea name="content" cols="40" rows="10" required="" id="id_content" ></textarea>
-
-
-
-
-  </p>
-        <button type="submit">Submit</button>
-
-  </form>
-
-          {% else %}
-          <p>Please login to post a review.</p>
-      {% endif %}
-  </form>
-    </div>
+{% if request.user.is_authenticated %}
+  <div class="rev">
+    <form method="post">
+      {% csrf_token %}
+      <p>
+        <label for="id_title">Title:</label>
+        <input style="height: 5%;width: 98%;" type="text" name="title" maxlength="100" required="" id="id_title">
+      </p>
+      <p>
+        <label for="id_content">Content:</label>
+        <textarea name="content" cols="40" rows="10" required="" id="id_content"></textarea>
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
   <hr>
+{% else %}
+  <p>Please login to post a review.</p>
+{% endif %}
+
   {% for review in reviews %}
     <h3>{{ review.title }}</h3>
     <p>{{ review.content }}</p>
