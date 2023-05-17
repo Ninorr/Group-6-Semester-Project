@@ -18,16 +18,19 @@
 .sq p{
     padding-top: 18px;
 }
+*{
+    background: #eaf6f6;
+}
 </style>
-<body style="background-color: #eeeeee">
+<body style="background-color: #eaf6f6">
 {% if request.user.is_authenticated %}
-    <div class="jumbotron text-center" style="margin-bottom:0">
-      <h1 style="background-color:#eeeeee ">Welcome to your account!</h1>
-      <p style="background-color:#eeeeee ">Here,you can navigate to different services that we offer!</p>
+    <div class="jumbotron text-center" style="margin-bottom:0;background-color: #eaf6f6;">
+      <h1 style="background-color:#eaf6f6 ">Welcome to your account!</h1>
+      <p style="background-color:#eaf6f6 ">Here,you can navigate to different services that we offer!</p>
     </div>
 
 
-    <div class="container">
+    <div class="container" style="background-color: #eeeeee">
       <div class="row">
         <div class="col-sm-4">
             {% csrf_token %}
@@ -38,13 +41,13 @@
           <ul class="nav nav-pills nav-stacked">
             <li class="active"><a href="services">Start my order</a></li>
               <li><a href="/orders">View my order history</a></li>
-            <li><a href="#">Manage my account</a></li>
+            <li><a href="/accounts/myaccount/">Manage my account</a></li>
           </ul>
           <hr class="hidden-sm hidden-md hidden-lg">
         </div>
         <div class="col-sm-8">
           <h3>Order history</h3>
-          <h5>Want to view your order histroy? </h5>
+          <h5>Want to view your order history? </h5>
           <h5>Find the link below and view previous orders along with status updates</h5>
           <br>
           <h3>Manage my account</h3>
@@ -55,9 +58,9 @@
       </div>
     </div>
 
-    <div class="jumbotron text-center" style="margin-bottom:0">
-      <p style="background-color:#eeeeee ">Squeaky Clean - we got your clothes and your back!</p>
-      <h5 style="background-color:#eeeeee "> Technical difficulties? Call us right away at 402-000-000-00</h5>
+    <div class="jumbotron text-center" style="margin-bottom:0;background-color: #eaf6f6">
+      <p style="background-color:#eaf6f6 ">Squeaky Clean - we got your clothes and your back!</p>
+      <h5 style="background-color:#eaf6f6 "> Technical difficulties? Call us right away at 402-000-000-00</h5>
     </div>
 
 </body>
