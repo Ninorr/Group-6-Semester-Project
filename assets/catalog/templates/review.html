@@ -1,16 +1,160 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+    @media (max-width: 480px) {
+    body {
+      margin: 0;
+      padding: 10px;
+      background-color: #eaf6f6;
+    }
+
+    .rev {
+      max-width: 300px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rev h2 {
+      text-align: center;
+      background-color: white;
+      margin-top: 0;
+      padding: 10px;
+    }
+
+    .rev table {
+      margin: 0 auto;
+    }
+
+    .rev input[type="text"],
+    .rev input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .rev button[type="submit"] {
+      width: 100%;
+       background-color: #4d90fe;
+      color: white;
+      padding: 10px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .rev button[type="submit"]:hover {
+       background-color: #357ae8;
+    }
+  }
+
+  /* Styles for PC */
+  @media (min-width: 481px) {
+    body {
+      margin: 0;
+      padding: 50px;
+        background-color: #eaf6f6;
+    }
+
+    .rev {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rev h2 {
+      text-align: center;
+      background-color: white;
+      margin-top: 0;
+      padding: 20px;
+    }
+
+    .rev table {
+      margin: 0 auto;
+    }
+
+    .rev input[type="text"],
+    .rev input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .rev button[type="submit"] {
+      width: 100%;
+      background-color: #4d90fe;
+      color: white;
+      padding: 15px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .rev button[type="submit"]:hover {
+      background-color: #357ae8;
+    }
+  }
+    input[type="text"],
+ textarea {
+  display: block;
+  width: 98%;
+  height:30%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+    </style>
+    <br>
   <h1>Review</h1>
+ {% if request.user.is_authenticated %}
+     <div class="rev">
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-      {% if request.user.is_authenticated %}
+
+     <form method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="QaQ88AhpaxXmil7TNcNhofv76OCnF1toSzhF6KpCzS8aqZDlHEPzZq5w8xzoF9WI">
+    <p>
+    <label for="id_title">Title:</label>
+    <input style="
+    height: 5%;width: 98%;" type="text" name="title" maxlength="100" required="" id="id_title">
+
+
+  </p>
+
+
+  <p>
+    <label for="id_content">Content:</label>
+    <textarea name="content" cols="40" rows="10" required="" id="id_content" ></textarea>
+
+
+
+
+  </p>
         <button type="submit">Submit</button>
+
+  </form>
+
           {% else %}
           <p>Please login to post a review.</p>
       {% endif %}
   </form>
+    </div>
   <hr>
   {% for review in reviews %}
     <h3>{{ review.title }}</h3>

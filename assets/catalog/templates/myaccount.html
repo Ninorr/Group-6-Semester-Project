@@ -4,7 +4,8 @@
 
 <style>
 body{
-    background-color: #FFE699;
+   background:  #eaf6f6 ;
+
 }
 h1 {
   text-align: center;
@@ -80,6 +81,7 @@ font-size: 22px;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
        font-size: 22px;
+       padding: 0px;
 
     }
 }
@@ -93,14 +95,19 @@ font-size: 22px;
 
 
   {% if user.is_authenticated %}
+<br>
+      <br>
+      <br>
 
 
 
-      <div class="changename">
-        <p style="background-color: #FFE699;"><strong>Welcome, {{ user.username }}!</strong></p>
+
+      <div class="changename" >
+        <p style="background-color: transparent;"><strong>Welcome, {{ user.username }} !</strong></p>
     <form method="post" id="user-form" action="{% url 'change_name' %}">
       {% csrf_token %}
-        <h2 style="color: black">Manage ID</h2>
+        <h2 style="color: black;text-align: center">Manage ID</h2>
+        <br>
       <div class="form-group">
         <label for="id_first_name">First Name:</label>
         <input type="text" name="first_name" value="{{ user.first_name }}" id="id_first_name">

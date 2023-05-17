@@ -3,10 +3,13 @@
 {% block content %}
 
     <style>
+    body{
+         background:  #eaf6f6 ;
+    }
 .cont{
     margin: 0;
   padding: 0;
-  font-family: "montserrat",sans-serif;
+  /*font-family: "montserrat",sans-serif;*/
   box-sizing: border-box;
     min-height: 50vh;
   display: flex;
@@ -24,7 +27,7 @@
 
 
 .card{
-    background-color: #9A8174;
+    background-color: #08466e;
   padding: 0 20px;
   margin: 0 10px;
   width: calc(33% - 20px);
@@ -74,6 +77,12 @@
     font-size: 20px;
 
 }
+@media (min-width:1207px) {
+    h2{
+        padding-top: 100px;
+    }
+
+   }
 
 @media screen and (max-width:800px) {
   .contact-info{
@@ -89,6 +98,7 @@
     </style>
      <br>
      <br>
+
     <h2 style="text-align: center;font-size: 40px">Contact Us</h2>
     <br>
     <div class="cont">

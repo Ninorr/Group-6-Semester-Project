@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <style>
+    body{
+        background-color: #eaf6f6;
+    }
     .tcs h2{
         padding-left: 50px;
         padding-right: 50px;
@@ -11,10 +14,16 @@
         padding-left: 50px;
         padding-right: 50px;
     }
+    @media (min-width:1365px) {
+    .tcs{
+        padding-top: 80px;
+    }
+
+   }
 
     @media(max-width:991px){
    .terms {
-       font-size: 18px;
+       font-size: 28px;
    }
 }
 
